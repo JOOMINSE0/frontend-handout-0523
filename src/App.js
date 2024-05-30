@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Container, Navbar, Nav} from 'react-bootstrap';
 import { useState } from 'react';
 import data from './data.js';
-import {Routes, Route, Link, useNavigate, Outlet} from 'react-router-dom';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import Detail from './detail.js';
 
 
@@ -31,7 +31,7 @@ function App() {
           <button onClick={()=>{
             let copy = [...shoes].sort((a,b)=> a.title.localeCompare(b.title));
             setShoes(copy);
-          }}>가나다순정렬</button>
+          }}>sort</button>
           </div>
 
         <div className="container">
@@ -51,10 +51,6 @@ function App() {
         <Route path="/detail/:id" element={<Detail shoes={shoes}/>}/>
       </Routes>
 
-      <Link to="/">홈</Link>
-      <div></div>
-      <Link to="/detail/0">상세페이지</Link>
-
 
     </div>
   );
@@ -69,3 +65,4 @@ function Card(props){
     </div>
   )
 }
+export default App; 
